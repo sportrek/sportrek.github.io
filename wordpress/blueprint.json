@@ -1,0 +1,58 @@
+{
+ "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+ "meta": {
+  "title": "ספורטרק - WordPress + Elementor",
+  "author": "YT Web Dev & Design",
+  "description": "אתר ספורטרק המלא על WordPress, Elementor ו-WooCommerce"
+ },
+ "landingPage": "/",
+ "preferredVersions": {
+  "php": "8.3",
+  "wp": "latest"
+ },
+ "features": {
+  "networking": true
+ },
+ "steps": [
+  {
+   "step": "importWordPressFiles",
+   "wordPressFilesZip": {
+    "resource": "url",
+    "url": "https://sportrek.github.io/wordpress/sportrek-wp.zip"
+   }
+  },
+  {
+   "step": "installPlugin",
+   "pluginData": {
+    "resource": "wordpress.org/plugins",
+    "slug": "woocommerce"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "installPlugin",
+   "pluginData": {
+    "resource": "wordpress.org/plugins",
+    "slug": "elementor"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "activatePlugin",
+   "pluginPath": "zol-core/zol-core.php"
+  },
+  {
+   "step": "activateTheme",
+   "themeFolderName": "zolsport"
+  },
+  {
+   "step": "login",
+   "username": "admin",
+   "password": "password"
+  }
+ ]
+}
